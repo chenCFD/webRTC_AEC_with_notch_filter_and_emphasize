@@ -11,4 +11,4 @@ speex AEC Github Repo: [speex AEC](https://github.com/echocatzh/SPEEX-AEC-python
 The code is modified from [webRTC AEC](https://github.com/YAN-sysbest/WebRTC-AEC) and [speex AEC](https://github.com/echocatzh/SPEEX-AEC-python).  
 Modification points are as below:
 
-Add notch filter, preemphasize and simple two path filter to webRTC  
+Add notch filter, preemphasize and simple two path filter to webRTC AEC 
