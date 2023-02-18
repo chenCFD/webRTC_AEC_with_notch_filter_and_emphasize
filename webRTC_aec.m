@@ -193,7 +193,7 @@ for kk=1:Nb - 1
     for i=1:N
         tmp_out = dk(i) - ykfb(i);
         tmp_out=tmp_out+preemph*meme;
-        meme=ekfb(i);
+        meme=tmp_out;
         ekfb(i)=tmp_out;
         
         
@@ -237,13 +237,13 @@ for kk=1:Nb - 1
     PH = IFPP(1:N,:);
     tmp = fft([PH;zeros(N,M)]);
     FPH = tmp(1:N+1,:);
-    WFbb = WFb + FPH;
+    WFb = WFb + FPH;
     
-    count0=count0+1;
-    if kk==1 | (mEkpb<mEkpf & mEkpb/XFmpp<0.5)
-        WFb=WFbb;
-        count=count+1;
-    end
+    %count0=count0+1;
+    %if kk==1 | (mEkpb<mEkpf & mEkpb/XFmpp<0.5)
+    %    WFb=WFbb;
+    %    count=count+1;
+    %end
 
     if mod(kk, 10*mult) == 0
         WFbEn = sum(real(WFb.*conj(WFb)));
